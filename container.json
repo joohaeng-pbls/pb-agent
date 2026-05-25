@@ -1,0 +1,61 @@
+{
+  "mcpServers": {
+    "gmail": {
+      "command": "gmail-mcp",
+      "args": [],
+      "env": {
+        "GMAIL_OAUTH_PATH": "/workspace/extra/.gmail-mcp/gcp-oauth.keys.json",
+        "GMAIL_CREDENTIALS_PATH": "/workspace/extra/.gmail-mcp/credentials.json"
+      }
+    },
+    "ollama": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/app/src/ollama-mcp-stdio.ts"
+      ],
+      "env": {}
+    },
+    "dataclinic": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/workspace/agent/dataclinic-mcp.ts"
+      ],
+      "env": {}
+    },
+    "blog": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/workspace/agent/blog-mcp.ts"
+      ],
+      "env": {}
+    }
+  },
+  "packages": {
+    "apt": [],
+    "npm": []
+  },
+  "additionalMounts": [
+    {
+      "hostPath": "/Users/nano/.gmail-mcp",
+      "containerPath": ".gmail-mcp",
+      "readonly": false
+    },
+    {
+      "hostPath": "/Users/nano/.config/gh",
+      "containerPath": "gh-config",
+      "readonly": true
+    },
+    {
+      "hostPath": "/Users/nano/Developer/repos",
+      "containerPath": "repos",
+      "readonly": false
+    }
+  ],
+  "skills": "all",
+  "groupName": "pb",
+  "assistantName": "pb",
+  "agentGroupId": "ag-1777718551232-unrbjp"
+}
