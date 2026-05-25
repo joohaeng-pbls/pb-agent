@@ -1,0 +1,15 @@
+# Logs
+cf-tunnel*.log
+/tmp/
+
+# Binary
+cloudflared
+
+# Runtime data (not code)
+conversations/
+v1-slack-data/
+wiki/
+memory/
+
+# Temp
+*.log
